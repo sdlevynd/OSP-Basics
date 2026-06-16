@@ -1,0 +1,23 @@
+all of these commands need to be run through the Terminal
+you can access this using the buttons in the bottom left corner of the PyCharm window
+
+
+
+Creating your database for the first time:
+    you need to run three commands when creating your database for the first time
+    instead of MESSAGE - add a relevant message such as "initial migration"
+
+        flask db init
+        flask db migrate -m "MESSAGE"
+        flask db upgrade
+
+
+
+Making changes to your database:
+    you need to run two commands when you have made a change to your models,
+    and you need to migrate this change to your database
+
+        flask db migrate -m "MESSAGE"
+        flask db upgrade
+
+
