@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="app" uuid="9115fd03-f4e3-40e5-b9e3-602c20544348">
+    <data-source source="LOCAL" name="app" uuid="f734ae0a-675d-4f48-b26d-d4d612abf7f8">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\sly.NDONLINE\OneDrive - Notre Dame Catholic Sixth Form College\###2025-2026\##Digital Shared\T Level\2026-2027\#U6\Flask Demo\instance\app.db</jdbc-url>
+      <jdbc-url>jdbc:sqlite:C:\Users\sly.NDONLINE.000\PycharmProjects\Flask_Demo_T-Level\instance\app.db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
       <libraries>
         <library>
