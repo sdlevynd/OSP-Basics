@@ -57,3 +57,9 @@ def register():  # put application's code here
         return redirect(url_for("main.home"))
 
     return render_template("register.html")
+
+@main.route("/products")
+def products():
+    from .models import Product
+    products = Product.query.all()
+    return render_template("products.html",products=products)

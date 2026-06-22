@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}Products{% endblock %}
+
+{% block content %}
+
+<div class="products-header">
+    <h1>Products</h1>
+    <p>Browse our available products.</p>
+</div>
+
+<div class="product-grid">
+
+    {% for product in products %}
+    <div class="card product-card">
+
+        {% if product.image %}
+        <img
+            src="{{ product.image }}"
+            alt="{{ product.name }}"
+            class="product-image">
+        {% endif %}
+
+        <div class="product-content">
+            <h2>{{ product.name }}</h2>
+
+            {% if product.description %}
+            <p class="product-description">
+                {{ product.description }}
+            </p>
+            {% endif %}
+
+            <div class="product-footer">
+                <span class="product-price">
+                    £{{ "%.2f"|format(product.price) }}
+                </span>
+
+                <a
+                    href="{{ url_for('main.products')}}"
+                    class="btn">
+                    View
+                </a>
+            </div>
+        </div>
+
+    </div>
+    {% endfor %}
+
+</div>
+
+{% endblock %}
