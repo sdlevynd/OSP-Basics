@@ -19,7 +19,7 @@ def login():
             flash("Email not found", "error")
             return render_template("login.html")
         else:
-            if password == check_user.password:
+            if check_user.check_password(password):
                 flash("Login successful", "success")
                 return redirect(url_for("main.home"))
             else:
@@ -42,7 +42,14 @@ def register():  # put application's code here
             flash("Email already in use", "warning")
             return render_template("register.html")
 
-        new_user = User(email=email, password=password)
+        from .utils.validation import length_check, complexity_check
+
+        if not length_check(password, 8) or not complexity_check(password, True, True, True, True):
+            flash("Password is not secure","warning")
+            return render_template("register.html")
+
+        new_user = User(email=email)
+        new_user.set_password(password)
         db.session.add(new_user)
         db.session.commit()
 
