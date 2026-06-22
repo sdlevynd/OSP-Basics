@@ -8,10 +8,12 @@ class User(db.Model):
     password = db.Column(db.String(255), nullable=False)
 
     def __repr__(self):
-        return f"<User {self.username}>"
+        return f"<User {self.id}>"
 
     def set_password(self, password):
-        self.password = password
+        from .utils.hashing import hash_password
+        self.password = hash_password(password)
 
     def check_password(self, password):
-        return self.password == password
+        from .utils.hashing import hash_password
+        return self.password == hash_password(password)

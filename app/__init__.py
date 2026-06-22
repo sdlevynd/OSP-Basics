@@ -17,7 +17,6 @@ def create_app():
     from .routes import main
     app.register_blueprint(main)
 
-    # Import models so Flask-Migrate can discover them
     from . import models
 
     return app
