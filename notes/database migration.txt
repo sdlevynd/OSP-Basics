@@ -21,3 +21,5 @@ Making changes to your database:
         flask db upgrade
 
 
+when cloning to a new machine you may need to remove the data source and re-add it
+by double-clicking the app.db file in the instances folder
